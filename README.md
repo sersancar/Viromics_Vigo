@@ -14,7 +14,8 @@ In this 'hands on' activity we will try to investigate the ecological role playe
 We will study the viruses we will found in the gut microbiome of a male and a female sea cucumbers. These metagenomes were published in https://doi.org/10.1016/j.aquaculture.2023.740125 and are deposited at the NCBI with SRR23999930 (https://www.ncbi.nlm.nih.gov/search/all/?term=SRR23999930) and SRR23999948 (https://www.ncbi.nlm.nih.gov/search/all/?term=SRR23999948) accesion numbers. To do so, we will follow the next steps:
 
   1. **Watch quality of the reads**. We will use **FastQC** () and **MultiQC** (). The first tool do the job for each file and the second one summarises the results.
-  2.  **Delete non-paired and low quality reads**. To do so we will use **Trimmomatic** ().
+  2. **Delete non-paired and low quality reads**. To do so we will use **Trimmomatic** ().
   3. **Delete possible contaminated reads**. We will eliminate the reads that belong to the sea cucumber to only employ in downstream analisys those that are microbial ones. To achive this, we will first build a index with *A. Japonicus* genome to then map all previously filtered reads to it. We will use the unmapped reads in further analysis.
-  4. **Assembling**. We will get our beloved microbial contigs using MEGAHIT ().
-  5. **Viral Discovery**. Remember! Our reads came from a metagenome, so they will belong principally to *Bacteria* and *Archaea*. We will nedd to find the 'needle in the haystack'. We will look for the viral contigs within the total contigs obtained employingg VirSorter2 (), VIBRANT () and DeepVirFinder ().    
+  4. **Assembling**. We will get our beloved microbial contigs using **MEGAHIT** ().
+  5. **Viral Discovery**. Remember! Our reads came from a metagenome, so they will belong principally to *Bacteria* and *Archaea*. We will nedd to find the 'needle in the haystack'. We will look for the viral contigs within the total contigs obtained employingg **VirSorter2** (), **VIBRANT** () and **DeepVirFinder** (). We will put all the putative viral contig obtained with each method together to continue the analisys.
+  6. **Binning** .We will employed **vRhyme** (), a virus-specialised clustering tool to group all the viral contigs that belongs to the same operational taxomomic unit (OTU).

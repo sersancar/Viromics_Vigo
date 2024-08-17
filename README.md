@@ -24,4 +24,4 @@ We will study the viruses we will found in the gut microbiome of a male and a fe
   9. **AMGs detection** of the binned contigs. We will use again **VIBRANT** to perform this task.
   10. **Data Analysis**. We will use **R** to get some insights into the ecological role that viruses play in the gut microbial communie of sea cubumbers.
 
-All code deposited in this repo is intended to be run in the HPC cluster Finisterrae III hosteb by CESGA (Galicia Supercomputing Center). The CESGA Technical Documentation, incluiding Finisterrae III User Guide, can be consulted at https://cesga-docs.gitlab.io/index.html .
+All code deposited in this repo is intended to be run in the HPC cluster Finisterrae III hosted by CESGA (Galicia Supercomputing Center). The CESGA Technical Documentation, incluiding Finisterrae III User Guide, can be consulted at https://cesga-docs.gitlab.io/index.html .

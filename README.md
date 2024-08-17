@@ -1,5 +1,5 @@
 ## Viromics_Vigo (IIM-CSIC)
-This repo contains the material we will employ during the Viromics day (thursday, October 24: 9-14h).
+#This repo contains the material we will employ during the Viromics day (thursday, October 24: 9-14h).
 
 During this session we will work with *Apostichopus japonicus* (sea cucumber), a non-model organism. But we are lucky. It's genome is already sequenced and deposited al the NCBI with Chromosome Assembly level (GCA_037975245.1: https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_037975245.1/).
 
@@ -22,3 +22,4 @@ We will study the viruses we will found in the gut microbiome of a male and a fe
   7. **Taxonomic annotanion** of the binned contigs using **geNomad** (https://github.com/apcamargo/genomad).
   8. **Host prediction** of the binned contigs with **iPHoP** (https://bitbucket.org/srouxjgi/iphop/src/main/).
   9. **AMGs detection** of the binned contigs. We will use again **VIBRANT** to perform this task.
+  10. **Data Analysis**. We will use **R** to get some insights into the ecological role that viruses play in the gut microbial communie of sea cubumbers.

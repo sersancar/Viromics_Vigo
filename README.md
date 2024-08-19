@@ -9,7 +9,7 @@ During this session we will work with *Apostichopus japonicus* (sea cucumber), a
 
 Our sea cucumber is not only an elegant echinoderm, but also a valuable delicacy, especially in China, Korea and Japan. Many tonnes of this sea cucumber are caught every year, and it is also farmed on a commercial scale. When cultivated, sea cucumbers are mainly fed on a diet consisting of seaweeds and sometimes they suffer from diseases related to eating disorders. These disorders reduce the growth of the sea cucumber and result in millionaire losses.
 
-In this 'hands on' activity we will try to investigate the ecological role played by viruses in the gut microbiome of sea cucumbers. Viruses are known to limit the host population they parasitise and also drive the evolution of their hosts through horizontal gene transfer and the expression of viral auxiliary metabolic genes (AMGs). These AMGs are host genes that viruses carry in their genomes to enhance specific metabolic pathways, providing an evolutionary advantage to the hosts.
+In this 'hands on' activity we will try to investigate the ecological role played by viruses in the gut microbiome of sea cucumbers. Viruses are known to limit the host population they parasitise and also drive the evolution of their hosts through horizontal gene transfer and the expression of viral auxiliary metabolic genes (AMGs). These AMGs are host genes that viruses carry in their genomes to enhance specific metabolic pathways, providing an evolutionary advantage to the hosts and also to the smart replicants who virusesare. 
 
 We will study the viruses we will found in the gut microbiome of a male and a female sea cucumbers. These metagenomes were published in https://doi.org/10.1016/j.aquaculture.2023.740125 and are deposited at the NCBI with SRR23999930 (https://www.ncbi.nlm.nih.gov/search/all/?term=SRR23999930) and SRR23999948 (https://www.ncbi.nlm.nih.gov/search/all/?term=SRR23999948) accesion numbers. To do so, we will follow the next steps:
 
@@ -22,6 +22,7 @@ We will study the viruses we will found in the gut microbiome of a male and a fe
   7. **Taxonomic annotanion** of the binned contigs using **geNomad** (https://github.com/apcamargo/genomad).
   8. **Host prediction** of the binned contigs with **iPHoP** (https://bitbucket.org/srouxjgi/iphop/src/main/).
   9. **AMGs detection** of the binned contigs. We will use again **VIBRANT** to perform this task.
-  10. **Data Analysis**. We will use **R** to get some insights into the ecological role that viruses play in the gut microbial communie of sea cubumbers.
+  10. **Viral Contigs quantification**. We will use **CoverM** (https://github.com/wwood/CoverM).
+  11. **Data Analysis**. We will use **R** to get some insights into the ecological role that viruses play in the gut microbial communie of sea cubumbers.
 
 All code deposited in this repo is intended to be run in the HPC cluster Finisterrae III hosted by CESGA (Galicia Supercomputing Center). The CESGA Technical Documentation, incluiding Finisterrae III User Guide, can be consulted at https://cesga-docs.gitlab.io/index.html .

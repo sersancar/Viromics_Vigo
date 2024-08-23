@@ -1,5 +1,5 @@
 ## Viromics (IIM-CSIC)
-# This repo contains the material we will employ during the Viromics day (thursday, October 24: 9-14h) within the course "APLICACIÓN DE HERRAMIENTAS -ÓMICAS EN ACUICULTURA" which will take place in the IIM in Vigo .
+# This repo contains the material we will employ during the Viromics day (thursday, October 24: 9-14h) within the course "APLICACIÓN DE HERRAMIENTAS -ÓMICAS EN ACUICULTURA" which will take place at the IIM in Vigo .
 
 During this session we will work with *Apostichopus japonicus* (sea cucumber), a non-model organism. But we are lucky. It's genome is already sequenced and deposited al the NCBI with Chromosome Assembly level (GCA_037975245.1: https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_037975245.1/).
 
@@ -9,7 +9,7 @@ During this session we will work with *Apostichopus japonicus* (sea cucumber), a
 
 Our sea cucumber is not only an elegant echinoderm, but also a valuable delicacy, especially in China, Korea and Japan. Many tonnes of this sea cucumber are caught every year, and it is also farmed on a commercial scale. When cultivated, sea cucumbers are mainly fed on a diet consisting of seaweeds and sometimes they suffer from diseases related to eating disorders. These disorders reduce the growth of the sea cucumber and result in millionaire losses.
 
-In this 'hands on' activity we will try to investigate the ecological role played by viruses in the gut microbiome of sea cucumbers. Viruses are known to limit the host population they parasitise and also drive the evolution of their hosts through horizontal gene transfer and the expression of viral auxiliary metabolic genes (AMGs). These AMGs are host genes that viruses carry in their genomes to enhance specific metabolic pathways, providing an evolutionary advantage to the hosts and also to the smart replicants who virusesare. 
+In this 'hands on' activity we will try to investigate the ecological role played by viruses in the gut microbiome of sea cucumbers. Viruses are known to limit the host population they parasitise and also drive the evolution of their hosts through horizontal gene transfer and the expression of viral auxiliary metabolic genes (AMGs). These AMGs are host genes that viruses carry in their genomes to enhance specific metabolic pathways, providing an evolutionary advantage to the hosts and also to the smart replicants who viruses are. 
 
 We will study the viruses we will found in the gut microbiome of a male and a female sea cucumbers. These metagenomes were published in https://doi.org/10.1016/j.aquaculture.2023.740125 and are deposited at the NCBI with SRR23999930 (https://www.ncbi.nlm.nih.gov/search/all/?term=SRR23999930) and SRR23999948 (https://www.ncbi.nlm.nih.gov/search/all/?term=SRR23999948) accesion numbers. To do so, we will follow the next steps:
 

@@ -1,5 +1,5 @@
 ## Viromics (IIM-CSIC)
-# This repo contains the material we will employ during the Viromics day (thursday, October 24: 9-14h) within the course "APLICACIÓN DE HERRAMIENTAS -ÓMICAS EN ACUICULTURA" which will take place at the IIM in Vigo .
+# This repo contains the material we will to employ during the Viromics day (thursday, October 24: 9-14h) within the course "APLICACIÓN DE HERRAMIENTAS -ÓMICAS EN ACUICULTURA" at the IIM in Vigo .
 
 During this session we will work with *Apostichopus japonicus* (sea cucumber), a non-model organism. But we are lucky. Its genome is already sequenced and deposited al the NCBI with Chromosome Assembly level (GCA_037975245.1: https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_037975245.1/).
 
@@ -21,7 +21,7 @@ We will study the viruses we will found in the gut microbiome of a male and a fe
   6. **Binning**. We will employ **vRhyme** (https://github.com/AnantharamanLab/vRhyme), a virus-specialised clustering tool to group all the viral contigs that belongs to the same operational taxomomic unit (OTU).
   7. **Taxonomic annotanion** of the binned contigs using **geNomad** (https://github.com/apcamargo/genomad).
   8. **Host prediction** of the binned contigs with **iPHoP** (https://bitbucket.org/srouxjgi/iphop/src/main/).
-  9. **AMGs detection** of the binned contigs. We will use again **VIBRANT** to perform this task.
+  9. **Viral Proteins Annotation** of the binned contigs. We will use **DRAM-V** (https://github.com/WrightonLabCSU/DRAM) to perform this task.
   10. **Viral Contigs quantification**. We will use **CoverM** (https://github.com/wwood/CoverM).
   11. **Data Analysis**. We will use **R** to get some insights into the ecological role that viruses play in the gut microbial communitie of sea cubumbers.
 

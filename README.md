@@ -19,10 +19,12 @@ We will study the viruses we will found in the gut microbiome of a male and a fe
   4. **Assembling**. We will get our beloved microbial contigs using **MEGAHIT** (https://github.com/voutcn/megahit).
   5. **Viral Discovery**. Remember! Our reads came from a metagenome, so they will belong principally to *Bacteria* and *Archaea*. We will need to find the 'needle in the haystack'. We will look for the viral contigs within the total contigs obtained employingg **VirSorter2** (https://github.com/jiarong/VirSorter2), **VIBRANT** (https://github.com/AnantharamanLab/VIBRANT) and **DeepVirFinder** (https://github.com/jessieren/DeepVirFinder). We will put all the putative viral contig obtained with each method together to continue the analisys.
   6. **Binning**. We will employ **vRhyme** (https://github.com/AnantharamanLab/vRhyme), a virus-specialised clustering tool to group all the viral contigs that belongs to the same operational taxomomic unit (OTU).
-  7. **Taxonomic annotanion** of the binned contigs using **geNomad** (https://github.com/apcamargo/genomad).
-  8. **Host prediction** of the binned contigs with **iPHoP** (https://bitbucket.org/srouxjgi/iphop/src/main/).
-  9. **Viral Proteins Annotation** of the binned contigs. We will use **DRAM-V** (https://github.com/WrightonLabCSU/DRAM) to perform this task.
-  10. **Viral Contigs quantification**. We will use **CoverM** (https://github.com/wwood/CoverM).
-  11. **Data Analysis**. We will use **R** to get some insights into the ecological role that viruses play in the gut microbial communitie of sea cubumbers.
+  7.  **Viral Contigs quantification**. We will use **CoverM** (https://github.com/wwood/CoverM).
+  8. **Taxonomic annotanion** of the binned contigs using **geNomad** (https://github.com/apcamargo/genomad).
+  9. **Host prediction** of the binned contigs with **iPHoP** (https://bitbucket.org/srouxjgi/iphop/src/main/).
+  10. **Viral Proteins Annotation** of the binned contigs. We will use **DRAM-V** (https://github.com/WrightonLabCSU/DRAM) to perform this task.
+  11. **Data Analysis**. We will use **R** () within **RStudio** () to get some insights into the ecological role that viruses play in the gut microbial communitie of sea cubumbers.
 
-All code deposited in this repo is intended to be run in the HPC cluster Finisterrae III hosted by CESGA (Galicia Supercomputing Center). The CESGA Technical Documentation, incluiding Finisterrae III User Guide, can be consulted at https://cesga-docs.gitlab.io/index.html .
+All code deposited in this repo is intended to be run in the HPC cluster Finisterrae III hosted by CESGA (Galicia Supercomputing Center). The CESGA Technical Documentation, incluiding Finisterrae III User Guide, can be consulted at https://cesga-docs.gitlab.io/index.html . We will use the cluster in a dedicated interactive way. To do so we will write in the cluster console:
+compute -c n_cores --mem mG
+where n_cores is the number of cores and m the RAM memory in GB demanded to Finisterrae III. In these nodes the maximum resources available are 64 cores and 247GB of RAM memory for a maximum of 8 hours. Enough for our purposes.

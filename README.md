@@ -29,9 +29,19 @@ All code deposited in this repo is intended to be run in the HPC cluster Finiste
 
 **So let's start!**
 
+First of all let's check that all the files needed in this session are stored where they are supposed to be:
+
+```bash
+ls -lh $LUSTRE/sergio/AJaponicus
+ls -lh $LUSTRE/sergio/reads
+```
+
+AJaponicus directory must contains the genome of our sea cucumber (A_Japonicus_genome.fna.gz) and reads must contains the reads of the metagenomes (A_Japonicus_female/male_1/2.fastq.gz).
+
 In our home directory in Finisterrae III we will clone this repository:
 
 ```bash
+cd $HOME
 git clone https://github.com/sersancar/Viromics_Vigo.git
 ```
 After this, we will go to the directory where all scripts needed in this session are stored:

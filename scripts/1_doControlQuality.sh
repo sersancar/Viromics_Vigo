@@ -5,8 +5,8 @@ module load fastqc/0.12.1
 module load multiqc/1.24.1-python-3.9.9
 
 # Directories 
-INPUTDIR=$LUSTRE/reads
-OUTPUTDIR=$LUSTRE/QualityResults
+INPUTDIR=$LUSTRE/sergio/reads
+OUTPUTDIR=$LUSTRE/sergio/QualityResults
 
 # Create output directory if it doesn't exist
 if [ ! -d ${OUTPUTDIR} ];then mkdir -p ${OUTPUTDIR};fi

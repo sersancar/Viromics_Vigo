@@ -7,9 +7,6 @@ module load cesga/2020 trimmomatic/0.39
 INPUTDIR=$LUSTRE/sergio/reads
 OUTPUTDIR=$LUSTRE/sergio/reads
 
-# Create output directory if it doesn't exist
-if [ ! -d ${OUTPUTDIR} ];then mkdir -p ${OUTPUTDIR};fi
-
 # Run it with error handling
 set -e  # Exit immediately if a command exits with a non-zero status
 

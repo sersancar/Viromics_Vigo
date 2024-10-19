@@ -23,8 +23,16 @@ We will study the viruses we will found in the gut microbiome of a male and a fe
   8. **Taxonomic annotanion** of the binned contigs using **geNomad** (https://github.com/apcamargo/genomad).
   9. **Host prediction** of the binned contigs with **iPHoP** (https://bitbucket.org/srouxjgi/iphop/src/main/).
   10. **Viral Proteins Annotation** of the binned contigs. We will use **DRAM-V** (https://github.com/WrightonLabCSU/DRAM) to perform this task.
-  11. **Data Analysis**. We will use **R** () within **RStudio** () to get some insights into the ecological role that viruses play in the gut microbial communitie of sea cubumbers.
+  11. **Data Analysis**. We will use **R** (https://www.r-project.org/) within **RStudio** (https://posit.co/products/open-source/rstudio/) to get some insights into the ecological role that viruses play in the gut microbial communitie of sea cubumbers.
 
-All code deposited in this repo is intended to be run in the HPC cluster Finisterrae III hosted by CESGA (Galicia Supercomputing Center). The CESGA Technical Documentation, incluiding Finisterrae III User Guide, can be consulted at https://cesga-docs.gitlab.io/index.html . We will use the cluster in a dedicated interactive way. To do so we will write in the cluster console:
-compute -c n_cores --mem mG
-where n_cores is the number of cores and m the RAM memory in GB demanded to Finisterrae III. In these nodes the maximum resources available are 64 cores and 247GB of RAM memory for a maximum of 8 hours. Enough for our purposes.
+All code deposited in this repo is intended to be run in the HPC cluster Finisterrae III hosted by CESGA (Galicia Supercomputing Center). The CESGA Technical Documentation, incluiding Finisterrae III User Guide, can be consulted at https://cesga-docs.gitlab.io/index.html .We will use the cluster in a dedicated interactive way. To do so we will write in the cluster console: compute -c n_cores --mem mG, where n_cores is the number of cores and m the RAM memory in GB demanded to Finisterrae III. In these nodes the maximum resources available are 64 cores and 247GB of RAM memory for a maximum of 8 hours. Enough for our purposes! We recomend mounting a machine with at least 36 cores and 100GB of RAM.
+
+**So let's start!**
+
+In ou our home directory in Finisterrae III we run
+```bash
+git clone  https://github.com/sersancar/Viromics_Vigo
+``
+
+
+

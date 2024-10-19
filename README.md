@@ -13,7 +13,7 @@ In this 'hands on' activity we will try to investigate the ecological role playe
 
 We will study the viruses we will found in the gut microbiome of a male and a female sea cucumbers. These metagenomes were published in https://doi.org/10.1016/j.aquaculture.2023.740125 and are deposited at the NCBI with SRR23999930 (https://www.ncbi.nlm.nih.gov/search/all/?term=SRR23999930) and SRR23999948 (https://www.ncbi.nlm.nih.gov/search/all/?term=SRR23999948) accesion numbers. To do so, we will follow the next steps:
 
-  1. **Watch the quality of the reads**. We will use **FastQC** (https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and **MultiQC** (https://github.com/MultiQC/MultiQC). The first tool do the job for each file and the second one summarises the results.
+  1. **Control the quality of the reads**. We will use **FastQC** (https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and **MultiQC** (https://github.com/MultiQC/MultiQC). The first tool do the job for each file and the second one summarises the results.
   2. **Delete non-paired and low quality reads**. To do so we will use **Trimmomatic** (https://github.com/usadellab/Trimmomatic).
   3. **Delete possible contaminated reads**. We will eliminate the reads that belong to the sea cucumber to only employ in downstream analisys those that are microbial ones. To achive this, we will first build a index with *A. Japonicus* genome to then map all previously filtered reads to it. We will use the unmapped reads in further analysis. To achive this, we will use the classic aligner **Bowtie2** (https://github.com/BenLangmead/bowtie2). 
   4. **Assembling**. We will get our beloved microbial contigs using **MEGAHIT** (https://github.com/voutcn/megahit).
@@ -62,4 +62,24 @@ To run each script we will do:
 ./script_name.sh
 ```
 
-Each script will read the input files and will write the outputs in a directory espified by the script. 
+Each script will read the input files and will write the outputs in a directory espified by the script. At the end of each script we will find the command to run it and also a command to get some help about the program executed.
+
+After the completion of scripts 1 to 5, we need to rename and move the assembled contigs by executing:
+
+```bash
+mkdir $LUSTRE/sergio/viroSeqs
+mv $LUSTRE/sergio/MegahitResults/A_japonicus_female/final.contigs.fa $LUSTRE/sergio/viroSeqs/A_japonicus_female_contigs.fa
+mv $LUSTRE/sergio/MegahitResults/A_japonicus_male/final.contigs.fa $LUSTRE/sergio/viroSeqs/A_japonicus_male_contigs.fa
+```
+
+In order to search for the viral contigs hidden in the total amount of contigs, we will concatenate all contigs in the same file. To identify latter on the source of the each contig we will add a prefix to each contig: "A_japonicus_female_" for female contigs and "A_japonicus_male_" for male ones. Also we will remove small contigs to don't waste time in not very meaningfull contigs. Let's do this in a few commands with a little help of seqkit (https://bioinf.shenwei.me/seqkit/): 
+
+```bash
+module load seqkit/2.1.0
+seqkit seq -m 1000  $LUSTRE/viroSeqs/A_japonicus_female.fa | awk '/^>/ {print ">A_japonicus_female_" substr($1, 2); next} {print}' > A_japonicus_female_filtered_contigs.fa.gz
+seqkit seq -m 1000  $LUSTRE/viroSeqs/A_japonicus_male.fa | awk '/^>/ {print ">A_japonicus_male_" substr($1, 2); next} {print}' > A_japonicus_male_filtered_contigs.fa
+cat $LUSTRE/sergio/viroSeqs/*_fileterd_*.fa $LUSTRE/sergio/total_filtered_contigs.fa
+module purge
+```
+
+Now we now can continue running scripts 6 to 8 which perform the search for viral sequences within the total_filtered_contigs.fa fasta file.

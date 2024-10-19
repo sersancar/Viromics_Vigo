@@ -27,6 +27,6 @@ else
     exit 1
 fi
 
-# Run => ./doQualityControl.sh
+# Run => ./1_doQualityControl.sh
 # Help 1 => module spider fastqc/0.12.1 
 # Help 2 => module spider multiqc/1.24.1-python-3.9.9

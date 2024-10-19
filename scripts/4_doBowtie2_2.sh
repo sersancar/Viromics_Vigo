@@ -30,6 +30,6 @@ else
     exit 1
 fi
 
-# while read sample;do sbatch 4_doBowtie2_2.sh ${sample};done<samples.txt
+# Run => while read sample;do sbatch 4_doBowtie2_2.sh ${sample};done<samples.txt
 # Help 1 => module spider bowtie2/2.4.4
 # Help 2 => module spider samtools/1.19

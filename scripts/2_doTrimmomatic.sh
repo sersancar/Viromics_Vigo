@@ -28,5 +28,5 @@ else
     exit 1
 fi
 
-#while read sample;do sbatch doTrimmomatic.sh ${sample};done<samples.txt
+#while read sample;do sbatch 2_doTrimmomatic.sh ${sample};done<samples.txt
 #help => module spider trimmomatic/0.39

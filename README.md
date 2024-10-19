@@ -29,10 +29,27 @@ All code deposited in this repo is intended to be run in the HPC cluster Finiste
 
 **So let's start!**
 
-In ou our home directory in Finisterrae III we run
+In our home directory in Finisterrae III we will clone this repository:
+
 ```bash
-git clone  https://github.com/sersancar/Viromics_Vigo
-``
+git clone https://github.com/sersancar/Viromics_Vigo.git
+```
+After this, we will go to the directory where all scripts needed in this session are stored:
 
+```bash
+cd Viromics_Vigo/scripts
+```
 
+To execute all scripts in this directory each one needs the execution permission, so let's do:
 
+```bash
+chmod +x *.sh
+```
+
+To run each script we will do:
+
+```bash
+./script_name.sh
+```
+
+Each script will read the input files and will write the outputs in a directory espified by the script. 

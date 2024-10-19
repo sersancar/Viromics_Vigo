@@ -78,7 +78,7 @@ In order to search for the viral contigs hidden in the total amount of contigs, 
 module load seqkit/2.1.0
 seqkit seq -m 1000  $LUSTRE/viroSeqs/A_japonicus_female.fa | awk '/^>/ {print ">A_japonicus_female_" substr($1, 2); next} {print}' > A_japonicus_female_filtered_contigs.fa.gz
 seqkit seq -m 1000  $LUSTRE/viroSeqs/A_japonicus_male.fa | awk '/^>/ {print ">A_japonicus_male_" substr($1, 2); next} {print}' > A_japonicus_male_filtered_contigs.fa
-cat $LUSTRE/sergio/viroSeqs/*_fileterd_*.fa $LUSTRE/sergio/total_filtered_contigs.fa
+cat $LUSTRE/sergio/viroSeqs/*_filtered_*.fa $LUSTRE/sergio/viroSeqs/total_filtered_contigs.fa
 module purge
 ```
 

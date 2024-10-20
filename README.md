@@ -115,5 +115,5 @@ cat $LUSTRE/sergio/vRhymeResults/vRhyme_best_bins_fasta/*.fasta | gzip > $LUSTRE
 cat $LUSTRE/sergio/viroSeqs/nonBinnedContigs.fa.gz $LUSTRE/sergio/viroSeqs/binnedContigs.fa.gz > $LUSTRE/sergio/viroSeqs/totalBinnedContigs.fa.gz
 ```
 
-The fasta file totalBinnedContigs.fa.gz will contain our definitive set of viral sequencies detected in this study. Using it as input we will run the scripts 9 to 14 to respectively quantify the abundance of the contigs in the samples, check for the completeness and contamination, annotate the proteins getting insights in the functionality, try to find the taxonomy of the contigs and also the possible hosts.
+The fasta file totalBinnedContigs.fa.gz will contain our definitive set of viral sequencies detected in this study. Using it as input we will run the scripts 10 to 14 to respectively quantify the abundance of the contigs in the samples, check for the completeness and contamination, annotate the proteins getting insights in the functionality, try to find the taxonomy of the contigs and also the possible hosts.
 

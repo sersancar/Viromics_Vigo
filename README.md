@@ -20,7 +20,7 @@ We will study the viruses we will found in the gut microbiome of a male and a fe
   5. **Viral Discovery**. Remember! Our reads came from a metagenome, so they will belong principally to *Bacteria* and *Archaea*. We will need to find the 'needle in the haystack'. We will look for the viral contigs within the total contigs obtained employingg **VirSorter2** (https://github.com/jiarong/VirSorter2), **VIBRANT** (https://github.com/AnantharamanLab/VIBRANT) and **DeepVirFinder** (https://github.com/jessieren/DeepVirFinder). We will put all the putative viral contig obtained with each method together to continue the analisys.
   6. **Binning**. We will employ **vRhyme** (https://github.com/AnantharamanLab/vRhyme), a virus-specialised clustering tool to group all the viral contigs that belongs to the same operational taxomomic unit (OTU).
   7.  **Viral Contigs quantification**. We will use **CoverM** (https://github.com/wwood/CoverM).
-  8.  **Completeness and contamination** of the contigs using **checkV** (). 
+  8.  **Completeness and contamination** of the contigs using **checkV** (https://bitbucket.org/berkeleylab/checkv/src/master/). 
   9. **Taxonomic annotanion** of the binned contigs using **geNomad** (https://github.com/apcamargo/genomad).
   10. **Host prediction** of the binned contigs with **iPHoP** (https://bitbucket.org/srouxjgi/iphop/src/main/).
   11. **Viral Proteins Annotation** of the binned contigs. We will use **DRAM-V** (https://github.com/WrightonLabCSU/DRAM) to perform this task.

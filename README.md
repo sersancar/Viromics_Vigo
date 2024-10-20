@@ -117,3 +117,8 @@ cat $LUSTRE/sergio/viroSeqs/nonBinnedContigs.fa.gz $LUSTRE/sergio/viroSeqs/binne
 
 The fasta file totalBinnedContigs.fa.gz will contain our definitive set of viral sequencies detected in this study. Using it as input we will run the scripts 10 to 14 to respectively quantify the abundance of the contigs in the samples, check for the completeness and contamination, annotate the proteins getting insights in the functionality, try to find the taxonomy of the contigs and also the possible hosts.
 
+At this point we have got all the information needed to perform the final data analysis in RStudio using script 15. Before this we will collect all tables in a directory in orther to simplify the paths:
+
+```bash
+
+```

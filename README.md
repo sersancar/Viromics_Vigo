@@ -1,5 +1,5 @@
 ## Viromics (IIM-CSIC)
-# This repo contains the material we will employ during the Viromics day (thursday, October 24: 9-14h) within the course "APLICACIÓN DE HERRAMIENTAS -ÓMICAS EN ACUICULTURA" at the IIM in Vigo .
+# This repo contains the material we will employ during the Viromics day (thursday, October 24: 9-14h) within the course "Omics tools in aquaculture" at the IIM in Vigo .
 
 During this session we will work with *Apostichopus japonicus* (sea cucumber), a non-model organism. But we are lucky. Its genome is already sequenced and deposited al the NCBI with Chromosome Assembly level (GCA_037975245.1: https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_037975245.1/).
 
@@ -76,10 +76,19 @@ In order to search for the viral contigs hidden in the total amount of contigs, 
 
 ```bash
 module load seqkit/2.1.0
-seqkit seq -m 1000  $LUSTRE/viroSeqs/A_japonicus_female.fa | awk '/^>/ {print ">A_japonicus_female_" substr($1, 2); next} {print}' > A_japonicus_female_filtered_contigs.fa.gz
-seqkit seq -m 1000  $LUSTRE/viroSeqs/A_japonicus_male.fa | awk '/^>/ {print ">A_japonicus_male_" substr($1, 2); next} {print}' > A_japonicus_male_filtered_contigs.fa
-cat $LUSTRE/sergio/viroSeqs/*_filtered_*.fa $LUSTRE/sergio/viroSeqs/total_filtered_contigs.fa
+seqkit seq -m 1000  $LUSTRE/sergio/viroSeqs/A_japonicus_female.fa | awk '/^>/ {print ">A_japonicus_female_" substr($1, 2); next} {print}' > $LUSTRE/sergio/viroSeqs/A_japonicus_female_filtered_contigs.fa.gz
+seqkit seq -m 1000  $LUSTRE/viroSeqs/A_japonicus_male.fa | awk '/^>/ {print ">A_japonicus_male_" substr($1, 2); next} {print}' > $LUSTRE/sergio/viroSeqs/A_japonicus_male_filtered_contigs.fa
+cat $LUSTRE/sergio/viroSeqs/*_filtered_*.fa > $LUSTRE/sergio/viroSeqs/total_filtered_contigs.fa
 module purge
 ```
 
-Now we now can continue running scripts 6 to 8 which perform the search for viral sequences within the total_filtered_contigs.fa fasta file.
+Now we now can continue running scripts 6 to 8 which perform the search for viral sequences within the total_filtered_contigs.fa fasta file. Once we are here, we need to put together all the contigs identified as viral. To achive this, we will firstly gather all viral contig identifiers obtained with each virus discovery tool:
+
+```bash
+module load seqkit/2.1.0
+grep "||full" $LUSTRE/sergio/VS2VirResults/final-viral-score.tsv | cut -d'|' -f1 > VS2Virs.txt
+awk '$3>=0.99 && $4<=0.01{print $1}' $LUSTRE/sergio/DVFVirResults/total_filtered_contigs.fa.gz_gt1bp_dvfpred.txt > DVFVirs.txt
+seqkit seq -n -i $LUSTRE/sergio/VIBRANTResults/VIBRANT_total_filtered_contigs/VIBRANT_phages_total_filtered_contigs/total_filtered_contigs.phages_combined.fna > VIBRANTVirs.txt
+cat *Virs.txt > total_viral_contigs.txt
+module purge
+```

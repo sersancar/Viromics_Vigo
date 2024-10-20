@@ -123,7 +123,7 @@ At this point we have got all the information needed to perform the final data a
 
 ```bash
 mkdir $LUSTRE/sergio/finalTables
-mv $HOME/Viromics_Vigo/metabolism_vigo.tsv
+mv $HOME/Viromics_Vigo/metabolism_vigo.tsv $LUSTRE/sergio/finalTables
 cp $LUSTRE/sergio/contigsCounts/*.tsv $LUSTRE/sergio/finalTables
 cp $LUSTRE/sergio/checkVBinsResults/quality_summary.tsv $LUSTRE/sergio/finalTables
 cp $LUSTRE/sergio/DRAMResults/annotations.tsv $LUSTRE/sergio/finalTables

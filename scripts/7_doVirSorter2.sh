@@ -4,7 +4,7 @@
 module load cesga/system virsorter2/2.2.4
 
 # Directories 
-INPUTDIR=$LUSTRE/sergio/MegahitResults
+INPUTDIR=$LUSTRE/sergio/viroSeqs
 OUTPUTDIR=$LUSTRE/sergio/VS2Results
 
 # Create output directory if it doesn't exist

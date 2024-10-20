@@ -1,0 +1,145 @@
+KO	Pathway	Pathway _id	Type_1	Type_2
+K00161	Glycolysis / Gluconeogenesis	map00010	Carbohydrates	Metabolism
+K01610	Glycolysis / Gluconeogenesis	map00010	Carbohydrates	Metabolism
+K01689	Glycolysis / Gluconeogenesis	map00010	Carbohydrates	Metabolism
+K01895	Glycolysis / Gluconeogenesis	map00010	Carbohydrates	Metabolism
+K00024	TCA cycle	map00020	Carbohydrates	Metabolism
+K00161	TCA cycle	map00021	Carbohydrates	Metabolism
+K00177	TCA cycle	map00022	Carbohydrates	Metabolism
+K01610	TCA cycle	map00023	Carbohydrates	Metabolism
+K00616	Pentose phosphate pathway	map00030	Carbohydrates	Metabolism
+K01809	Fructose and mannose 	map00051	Carbohydrates	Metabolism
+K02377	Fructose and mannose 	map00051	Carbohydrates	Metabolism
+K01809	Amino sugar and nucleotide sugar 	map00520	Carbohydrates	Metabolism
+K02377	Amino sugar and nucleotide sugar 	map00520	Carbohydrates	Metabolism
+K00024	Pyruvate 	map00620	Carbohydrates	Metabolism
+K00161	Pyruvate 	map00620	Carbohydrates	Metabolism
+K01610	Pyruvate 	map00620	Carbohydrates	Metabolism
+K01895	Pyruvate 	map00620	Carbohydrates	Metabolism
+K01963	Pyruvate 	map00620	Carbohydrates	Metabolism
+K00024	Glyoxylate and dicarboxylate 	map00630	Carbohydrates	Metabolism
+K00281	Glyoxylate and dicarboxylate 	map00630	Carbohydrates	Metabolism
+K01895	Glyoxylate and dicarboxylate 	map00630	Carbohydrates	Metabolism
+K01734	Propanoate 	map00640	Carbohydrates	Metabolism
+K01895	Propanoate 	map00640	Carbohydrates	Metabolism
+K01963	Propanoate 	map00640	Carbohydrates	Metabolism
+K11381	Propanoate 	map00640	Carbohydrates	Metabolism
+K00024	C fixation by Calvin cycle	map00710	Energy	Metabolism
+K00616	C fixation by Calvin cycle	map00710	Energy	Metabolism
+K01610	C fixation by Calvin cycle	map00710	Energy	Metabolism
+K00024	Other C fixation pathways	map00720	Energy	Metabolism
+K00177	Other C fixation pathways	map00720	Energy	Metabolism
+K01895	Other C fixation pathways	map00720	Energy	Metabolism
+K01963	Other C fixation pathways	map00720	Energy	Metabolism
+K00024	Methane 	map00680	Energy	Metabolism
+K01689	Methane 	map00680	Energy	Metabolism
+K01895	Methane 	map00680	Energy	Metabolism
+K00957	Sulfur 	map00920	Energy	Metabolism
+K10764	Sulfur 	map00920	Energy	Metabolism
+K00645	Fatty acid b.	map00061	Lipids	Metabolism
+K01963	Fatty acid b.	map00061	Lipids	Metabolism
+K00496	Fatty acid d.	map00071	Lipids	Metabolism
+K00529	Fatty acid d.	map00071	Lipids	Metabolism
+K00632	Fatty acid d.	map00071	Lipids	Metabolism
+K00645	Mycolic acid b.	map00074	Lipids	Metabolism
+K00632	alpha-Linolenic acid 	map00592	Lipids	Metabolism
+K00507	B. of unsaturated fatty acids	map01040	Lipids	Metabolism
+K10804	B. of unsaturated fatty acids	map01040	Lipids	Metabolism
+K00364	Purine 	map00230	Nucleotides	Metabolism
+K00957	Purine 	map00230	Nucleotides	Metabolism
+K01951	Purine 	map00230	Nucleotides	Metabolism
+K11175	Purine 	map00230	Nucleotides	Metabolism
+K15519	Purine 	map00230	Nucleotides	Metabolism
+K01956	Pyrimidine 	map00240	Nucleotides	Metabolism
+K15519	Pyrimidine 	map00240	Nucleotides	Metabolism
+K01956	Alanine,  aspartate and glutamate  	map00250	Amino acids	Metabolism
+K00281	Glycine,  serine and threonine  	map00260	Amino acids	Metabolism
+K12524	Glycine,  serine and threonine  	map00260	Amino acids	Metabolism
+K00024	Cysteine and methionine 	map00270	Amino acids	Metabolism
+K00789	Cysteine and methionine 	map00270	Amino acids	Metabolism
+K01243	Cysteine and methionine 	map00270	Amino acids	Metabolism
+K01740	Cysteine and methionine 	map00270	Amino acids	Metabolism
+K10764	Cysteine and methionine 	map00270	Amino acids	Metabolism
+K12524	Cysteine and methionine 	map00270	Amino acids	Metabolism
+K14155	Cysteine and methionine 	map00270	Amino acids	Metabolism
+K00632	Valine,  leucine and isoleucine d.	map00280	Amino acids	Metabolism
+K11381	Valine,  leucine and isoleucine d. 	map00280	Amino acids	Metabolism
+K00215	Lysine b.	map00300	Amino acids	Metabolism
+K12524	Lysine b.	map00300	Amino acids	Metabolism
+K01956	Arginine b.	map00220	Amino acids	Metabolism
+K00765	Histidine 	map00340	Amino acids	Metabolism
+K00529	Phenylalanine 	map00360	Amino acids	Metabolism
+K00957	Selenocompounds	map00450	Other amino acids	Metabolism
+K14155	Selenocompounds	map00450	Other amino acids	Metabolism
+K01627	Lipopolysaccharide b.	map00540	Glycans	Metabolism
+K06041	Lipopolysaccharide b.	map00540	Glycans	Metabolism
+K01809	O-Antigen nucleotide sugar b.	map00541	Glycans	Metabolism
+K02377	O-Antigen nucleotide sugar b.	map00541	Glycans	Metabolism
+K04487	Thiamine 	map00730	Cofactors and vitamins	Metabolism
+K00859	Pantothenate and CoA b.	map00770	Cofactors and vitamins	Metabolism
+K00161	Lipoic acid	map00785	Cofactors and vitamins	Metabolism
+K00281	Lipoic acid	map00785	Cofactors and vitamins	Metabolism
+K11381	Lipoic acid	map00785	Cofactors and vitamins	Metabolism
+K01495	Folate b.	map00790	Cofactors and vitamins	Metabolism
+K11175	One carbon pool by folate	map00670	Cofactors and vitamins	Metabolism
+K01845	Porphyrin	map00860	Cofactors and vitamins	Metabolism
+K01885	Porphyrin	map00860	Cofactors and vitamins	Metabolism
+K00632	Pinene,  camphor and geraniol d. 	map00907	Cofactors and vitamins	Metabolism
+K00215	Monobactam b.	map00261	Other secondary metabolites	Metabolism
+K00957	Monobactam b.	map00261	Other secondary metabolites	Metabolism
+K12524	Monobactam b.	map00261	Other secondary metabolites	Metabolism
+K00645	Prodigiosin b.	map00333	Other secondary metabolites	Metabolism
+K02078	B. of various antibiotics	map00998	Other secondary metabolites	Metabolism
+K00789	B. of various plant secondary metabolites	map00999	Other secondary metabolites	Metabolism
+K00529	Benzoate d.	map00362	Xenobiotics	Metabolism
+K00632	Benzoate d.	map00362	Xenobiotics	Metabolism
+K00632	Ethylbenzene d.	map00642	Xenobiotics	Metabolism
+K00496	Caprolactam d.	map00930	Xenobiotics	Metabolism
+K01951	Drug met. Enzymes	map00983	Xenobiotics	Metabolism
+K02879	Ribosome	map03010	Translation	Genetic Information Processing
+K02945	Ribosome	map03010	Translation	Genetic Information Processing
+K02956	Ribosome	map03010	Translation	Genetic Information Processing
+K01883	Aminoacyl-tRNA b.	map00970 	Translation	Genetic Information Processing
+K01885	Aminoacyl-tRNA b.	map00970 	Translation	Genetic Information Processing
+K01892	Aminoacyl-tRNA b.	map00970 	Translation	Genetic Information Processing
+K03100	Protein export	map03060	Folding,  sorting and d. 	Genetic Information Processing
+K03106	Protein export	map03060	Folding,  sorting and d. 	Genetic Information Processing
+K04487	Sulfur relay system	map04122	Folding,  sorting and d. 	Genetic Information Processing
+K00962	RNA d.	map03018	Folding,  sorting and d. 	Genetic Information Processing
+K01689	RNA d.	map03018	Folding,  sorting and d. 	Genetic Information Processing
+K03654	RNA d.	map03018	Folding,  sorting and d. 	Genetic Information Processing
+K04077	RNA d.	map03018	Folding,  sorting and d. 	Genetic Information Processing
+K01972	DNA replication	map03030	Replication and repair	Genetic Information Processing
+K02314	DNA replication	map03030	Replication and repair	Genetic Information Processing
+K02316	DNA replication	map03030	Replication and repair	Genetic Information Processing
+K02335	DNA replication	map03030	Replication and repair	Genetic Information Processing
+K02342	DNA replication	map03030	Replication and repair	Genetic Information Processing
+K02343	DNA replication	map03030	Replication and repair	Genetic Information Processing
+K01972	Base excision repair	map03410	Replication and repair	Genetic Information Processing
+K02335	Base excision repair	map03410	Replication and repair	Genetic Information Processing
+K03648	Base excision repair	map03410	Replication and repair	Genetic Information Processing
+K01972	Nucleotide excision repair	map03420	Replication and repair	Genetic Information Processing
+K02335	Nucleotide excision repair	map03420	Replication and repair	Genetic Information Processing
+K01972	Mismatch repair	map03430	Replication and repair	Genetic Information Processing
+K02342	Mismatch repair	map03430	Replication and repair	Genetic Information Processing
+K02343	Mismatch repair	map03430	Replication and repair	Genetic Information Processing
+K07456	Mismatch repair	map03430	Replication and repair	Genetic Information Processing
+K02335	Homologous recombination	map03440	Replication and repair	Genetic Information Processing
+K02342	Homologous recombination	map03440	Replication and repair	Genetic Information Processing
+K02343	Homologous recombination	map03440	Replication and repair	Genetic Information Processing
+K09810	ABC transporters	map02010	Membrane transport	Environmental Information Processing
+K11085	ABC transporters	map02010	Membrane transport	Environmental Information Processing
+K03106	Bacterial secretion system	map03070	Membrane transport	Environmental Information Processing
+K20974	Two-component system	map02020	Signal transduction	Environmental Information Processing
+K00161	HIF-1 signaling	map04066	Signal transduction	Environmental Information Processing
+K01689	HIF-1 signaling	map04066	Signal transduction	Environmental Information Processing
+K00507	AMPK signaling	map04152	Signal transduction	Environmental Information Processing
+K01338	Cell cycle	map04112	Cell growth and death	Cellular Processes
+K01358	Cell cycle	map04112	Cell growth and death	Cellular Processes
+K02314	Cell cycle	map04112	Cell growth and death	Cellular Processes
+K03544	Cell cycle	map04112	Cell growth and death	Cellular Processes
+K02031	Quorum sensing	map02024	Cellular community 	Cellular Processes
+K03106	Quorum sensing	map02024	Cellular community 	Cellular Processes
+K20974	Biofilm formation	map02025	Cellular community 	Cellular Processes
+K02395	Flagellar assembly	map02040	Cell motility	Cellular Processes
+K01689	Cytoskeleton	map04820	Cell motility	Cellular Processes

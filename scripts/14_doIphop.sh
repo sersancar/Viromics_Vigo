@@ -2,7 +2,7 @@
 
 # Directories
 DATADIR=$LUSTRE/sergio/viroSeqs
-OUTDIR=$LUSTRE/sergio/iphopResults2
+OUTDIR=$LUSTRE/sergio/iphopResults
 DBDIR=/mnt/netapp2/bio_databases/cursocsic2024/iphopDB/Aug_2023_pub_rw
 
 # Create OUTDIR if it does not exist

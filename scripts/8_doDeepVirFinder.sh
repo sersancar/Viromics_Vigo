@@ -42,5 +42,5 @@ fi
 conda deactivate
 
 # RUN => ./8_doDeepVirFinder.sh
-# HELP => 
+# HELP => python ${DVFDIR}/dvf.py -h
 

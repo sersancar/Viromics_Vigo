@@ -20,10 +20,11 @@ We will study the viruses we will found in the gut microbiome of a male and a fe
   5. **Viral Discovery**. Remember! Our reads came from a metagenome, so they will belong principally to *Bacteria* and *Archaea*. We will need to find the 'needle in the haystack'. We will look for the viral contigs within the total contigs obtained employingg **VirSorter2** (https://github.com/jiarong/VirSorter2), **VIBRANT** (https://github.com/AnantharamanLab/VIBRANT) and **DeepVirFinder** (https://github.com/jessieren/DeepVirFinder). We will put all the putative viral contig obtained with each method together to continue the analisys.
   6. **Binning**. We will employ **vRhyme** (https://github.com/AnantharamanLab/vRhyme), a virus-specialised clustering tool to group all the viral contigs that belongs to the same operational taxomomic unit (OTU).
   7.  **Viral Contigs quantification**. We will use **CoverM** (https://github.com/wwood/CoverM).
-  8. **Taxonomic annotanion** of the binned contigs using **geNomad** (https://github.com/apcamargo/genomad).
-  9. **Host prediction** of the binned contigs with **iPHoP** (https://bitbucket.org/srouxjgi/iphop/src/main/).
-  10. **Viral Proteins Annotation** of the binned contigs. We will use **DRAM-V** (https://github.com/WrightonLabCSU/DRAM) to perform this task.
-  11. **Data Analysis**. We will use **R** (https://www.r-project.org/) within **RStudio** (https://posit.co/products/open-source/rstudio/) to get some insights into the ecological role that viruses play in the gut microbial communitie of sea cubumbers.
+  8.  **Completeness and contamination** of the contigs using **checkV** (). 
+  9. **Taxonomic annotanion** of the binned contigs using **geNomad** (https://github.com/apcamargo/genomad).
+  10. **Host prediction** of the binned contigs with **iPHoP** (https://bitbucket.org/srouxjgi/iphop/src/main/).
+  11. **Viral Proteins Annotation** of the binned contigs. We will use **DRAM-V** (https://github.com/WrightonLabCSU/DRAM) to perform this task.
+  12. **Data Analysis**. We will use **R** (https://www.r-project.org/) within **RStudio** (https://posit.co/products/open-source/rstudio/) to get some insights into the ecological role that viruses play in the gut microbial communitie of sea cubumbers.
 
 All code deposited in this repo is intended to be run in the HPC cluster Finisterrae III hosted by CESGA (Galicia Supercomputing Center). The CESGA Technical Documentation, incluiding Finisterrae III User Guide, can be consulted at https://cesga-docs.gitlab.io/index.html .We will use the cluster in a dedicated interactive way. To do so we will write in the cluster console: compute -c n_cores --mem mG, where n_cores is the number of cores and m the RAM memory in GB demanded to Finisterrae III. In these nodes the maximum resources available are 64 cores and 247GB of RAM memory for a maximum of 8 hours. Enough for our purposes! We recomend mounting a machine with at least 36 cores and 100GB of RAM.
 
@@ -92,3 +93,27 @@ seqkit seq -n -i $LUSTRE/sergio/VIBRANTResults/VIBRANT_total_filtered_contigs/VI
 cat *Virs.txt > total_viral_contigs.txt
 module purge
 ```
+
+Now we can create a fasta file containing all our viral contigs using the text file with the viral identifiers and the fasta file with all contigs:
+
+```bash
+seqkit grep -f total_viral_contigs.txt -i $LUSTRE/sergio/viroSeqs/total_filtered_contigs.fa -o $LUSTRE/sergio/viroSeqs/total_viral_contigs.fa
+```
+
+The next steep will be try to cluster all the viral contigs in groups. Each bin (cluster) will contain contigs taxonomically related that will be our Operational Taxonomic Units (OTUs). We will perform this task executing the script 9. This script run the program and produce bins with at least 2 members and 2Kbp of contig length. We will use also the composite dereplication method. This dereplication method will produce a new merged contig with those contigs that overlap. 
+
+To follow the analysis we will keep the binned conting and also the non binned ones (singletons) using the shell:
+
+```bash
+seqkit seq -n $LUSTRE/sergio/vRhymeResults/vRhyme_best_bins_fasta/*.fasta | awk -F'__' '{print $2}' | sort > binnedContigs.txt
+cat $LUSTRE/sergio/vRhymeResults/vRhyme_dereplication/vRhyme_derep_composited-list_totalVirs.txt | sort > composited.txt
+grep -v "composite" binnedContigs.txt > binnedContigs2.txt
+cat composited.txt binnedContigs2.txt > binnedContigs3.txt
+comm -23 totalContigs.txt binnedContigs3.txt > nonBinnedContigs.txt
+seqkit grep -f nonBinnedContigs.txt -i $LUSTRE/sergio/viroSeqs/total_viral_contigs.fa | seqkit seq -m 2000 | gzip > $LUSTRE/sergio/viroSeqs/nonBinnedContigs.fa.gz
+cat $LUSTRE/sergio/vRhymeResults/vRhyme_best_bins_fasta/*.fasta | gzip > $LUSTRE/sergio/viroSeqs/binnedContigs.fa.gz
+cat $LUSTRE/sergio/viroSeqs/nonBinnedContigs.fa.gz $LUSTRE/sergio/viroSeqs/binnedContigs.fa.gz > $LUSTRE/sergio/viroSeqs/totalBinnedContigs.fa.gz
+```
+
+The fasta file totalBinnedContigs.fa.gz will contain our definitive set of viral sequencies detected in this study. Using it as input we will run the scripts 9 to 14 to respectively quantify the abundance of the contigs in the samples, check for the completeness and contamination, annotate the proteins getting insights in the functionality, try to find the taxonomy of the contigs and also the possible hosts.
+

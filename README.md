@@ -91,13 +91,13 @@ grep "||full" $LUSTRE/sergio/VS2VirResults/final-viral-score.tsv | cut -d'|' -f1
 awk '$3>=0.99 && $4<=0.01{print $1}' $LUSTRE/sergio/DVFVirResults/total_filtered_contigs.fa.gz_gt1bp_dvfpred.txt > DVFVirs.txt
 seqkit seq -n -i $LUSTRE/sergio/VIBRANTResults/VIBRANT_total_filtered_contigs/VIBRANT_phages_total_filtered_contigs/total_filtered_contigs.phages_combined.fna > VIBRANTVirs.txt
 cat *Virs.txt > total_viral_contigs.txt
-module purge
 ```
 
 Now we can create a fasta file containing all our viral contigs using the text file with the viral identifiers and the fasta file with all contigs:
 
 ```bash
 seqkit grep -f total_viral_contigs.txt -i $LUSTRE/sergio/viroSeqs/total_filtered_contigs.fa -o $LUSTRE/sergio/viroSeqs/total_viral_contigs.fa
+module purge
 ```
 
 The next steep will be try to cluster all the viral contigs in groups. Each bin (cluster) will contain contigs taxonomically related that will be our Operational Taxonomic Units (OTUs). We will perform this task executing the script 9. This script run the program and produce bins with at least 2 members and 2Kbp of contig length. We will use also the composite dereplication method. This dereplication method will produce a new merged contig with those contigs that overlap. 
@@ -105,6 +105,7 @@ The next steep will be try to cluster all the viral contigs in groups. Each bin 
 To follow the analysis we will keep the binned conting and also the non binned ones (singletons) using the shell:
 
 ```bash
+module load seqkit/2.1.0
 seqkit seq -n $LUSTRE/sergio/vRhymeResults/vRhyme_best_bins_fasta/*.fasta | awk -F'__' '{print $2}' | sort > binnedContigs.txt
 cat $LUSTRE/sergio/vRhymeResults/vRhyme_dereplication/vRhyme_derep_composited-list_totalVirs.txt | sort > composited.txt
 grep -v "composite" binnedContigs.txt > binnedContigs2.txt
@@ -113,6 +114,7 @@ comm -23 totalContigs.txt binnedContigs3.txt > nonBinnedContigs.txt
 seqkit grep -f nonBinnedContigs.txt -i $LUSTRE/sergio/viroSeqs/total_viral_contigs.fa | seqkit seq -m 2000 | gzip > $LUSTRE/sergio/viroSeqs/nonBinnedContigs.fa.gz
 cat $LUSTRE/sergio/vRhymeResults/vRhyme_best_bins_fasta/*.fasta | gzip > $LUSTRE/sergio/viroSeqs/binnedContigs.fa.gz
 cat $LUSTRE/sergio/viroSeqs/nonBinnedContigs.fa.gz $LUSTRE/sergio/viroSeqs/binnedContigs.fa.gz > $LUSTRE/sergio/viroSeqs/totalBinnedContigs.fa.gz
+module purge
 ```
 
 The fasta file totalBinnedContigs.fa.gz will contain our definitive set of viral sequencies detected in this study. Using it as input we will run the scripts 10 to 14 to respectively quantify the abundance of the contigs in the samples, check for the completeness and contamination, annotate the proteins getting insights in the functionality, try to find the taxonomy of the contigs and also the possible hosts.
@@ -120,5 +122,11 @@ The fasta file totalBinnedContigs.fa.gz will contain our definitive set of viral
 At this point we have got all the information needed to perform the final data analysis in RStudio using script 15. Before this we will collect all tables in a directory in orther to simplify the paths:
 
 ```bash
-
+mkdir $LUSTRE/sergio/finalTables
+mv $HOME/Viromics_Vigo/metabolism_vigo.tsv
+cp $LUSTRE/sergio/contigsCounts/*.tsv $LUSTRE/sergio/finalTables
+cp $LUSTRE/sergio/checkVBinsResults/quality_summary.tsv $LUSTRE/sergio/finalTables
+cp $LUSTRE/sergio/DRAMResults/annotations.tsv $LUSTRE/sergio/finalTables
+cp $LUSTRE/sergio/geNomadResults/totalBinnedContigs_summary/*_summary.tsv $LUSTRE/sergio/finalTables
+cp $LUSTRE/sergio/iphopResults/*_m80.csv $LUSTRE/sergio/finalTables
 ```

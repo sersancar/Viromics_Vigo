@@ -37,7 +37,14 @@ ls -lh $LUSTRE/sergio/AJaponicus
 ls -lh $LUSTRE/sergio/reads
 ```
 
-AJaponicus directory must contains the genome of our sea cucumber (A_Japonicus_genome.fna.gz) and reads must contains the reads of the metagenomes (A_Japonicus_female/male_1/2.fastq.gz).
+AJaponicus directory must contains the genome of our sea cucumber (A_Japonicus_genome.fna.gz) and reads must contains the reads of the metagenomes (A_Japonicus_female/male_1/2.fastq.gz). For security reasons we will change the name of $LUSTRE/sergio and will move these directories just in case something fails during this practical session. The remaining subdirectories within $LUSTRE/sergio contain the results of running all the scripts.
+
+```bash
+mv $LUSTRE/sergio $LUSTRE/sergio2
+mkdir $LUSTRE/sergio
+mv $LUSTRE/sergio2/AJaponicus $LUSTRE/sergio
+mv $LUSTRE/sergio2/reads $LUSTRE/sergio
+```
 
 In our home directory in Finisterrae III we will clone this repository:
 
@@ -63,9 +70,9 @@ To run each script we will do:
 ./script_name.sh
 ```
 
-Each script will read the input files and will write the outputs in a directory espified by the script. At the end of each script we will find the command to run it and also a command to get some help about the program executed.
+Each script will read the input files and write the output files to a directory specified by the script. At the end of each script we will find the command to execute it and also a command to get some help about the executed program.
 
-After the completion of scripts 1 to 5, we need to rename and move the assembled contigs by executing:
+Run the scripts 1 to 5. After their completion, we need to rename and move the assembled contigs by executing:
 
 ```bash
 mkdir $LUSTRE/sergio/viroSeqs

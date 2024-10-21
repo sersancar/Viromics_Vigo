@@ -111,15 +111,15 @@ cat $LUSTRE/sergio/vRhymeResults/vRhyme_dereplication/vRhyme_derep_composited-li
 grep -v "composite" binnedContigs.txt > binnedContigs2.txt
 cat composited.txt binnedContigs2.txt > binnedContigs3.txt
 comm -23 totalContigs.txt binnedContigs3.txt > nonBinnedContigs.txt
-seqkit grep -f nonBinnedContigs.txt -i $LUSTRE/sergio/viroSeqs/total_viral_contigs.fa | seqkit seq -m 2000 | gzip > $LUSTRE/sergio/viroSeqs/nonBinnedContigs.fa.gz
-cat $LUSTRE/sergio/vRhymeResults/vRhyme_best_bins_fasta/*.fasta | gzip > $LUSTRE/sergio/viroSeqs/binnedContigs.fa.gz
-cat $LUSTRE/sergio/viroSeqs/nonBinnedContigs.fa.gz $LUSTRE/sergio/viroSeqs/binnedContigs.fa.gz > $LUSTRE/sergio/viroSeqs/totalBinnedContigs.fa.gz
+seqkit grep -f nonBinnedContigs.txt -i $LUSTRE/sergio/viroSeqs/total_viral_contigs.fa | seqkit seq -m 2000 > $LUSTRE/sergio/viroSeqs/nonBinnedContigs.fa
+cat $LUSTRE/sergio/vRhymeResults/vRhyme_best_bins_fasta/*.fasta > $LUSTRE/sergio/viroSeqs/binnedContigs.fa
+cat $LUSTRE/sergio/viroSeqs/nonBinnedContigs.fa $LUSTRE/sergio/viroSeqs/binnedContigs.fa > $LUSTRE/sergio/viroSeqs/totalBinnedContigs.fa
 module purge
 ```
 
 The fasta file totalBinnedContigs.fa.gz will contain our definitive set of viral sequencies detected in this study. Using it as input we will run the scripts 10 to 14 to respectively quantify the abundance of the contigs in the samples, check for the completeness and contamination, annotate the proteins getting insights in the functionality, try to find the taxonomy of the contigs and also the possible hosts.
 
-At this point we have got all the information needed to perform the final data analysis in RStudio using script 15. Before this we will collect all tables in a directory in orther to simplify the paths:
+At this point we have got all the information needed to perform the final data analysis in RStudio using script 15. Before this, we will collect all tables in a directory in orther to simplify the paths:
 
 ```bash
 mkdir $LUSTRE/sergio/finalTables

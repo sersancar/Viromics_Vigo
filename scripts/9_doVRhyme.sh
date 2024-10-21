@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Load necessary modules
-module load cesga/system miniconda3/22.1
+module load cesga/system miniconda3/22.11.1-1
 
 # Activate environment
 conda activate vRhyme

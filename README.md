@@ -145,11 +145,11 @@ We also need the finalTables directory in the machine we are going to perform th
 scp -r USER@ft3.cesga.es:LUSTRE/sergio/finalTables DESTINATION
 ```
 
-Where user is your USER in Finisterrae III, LUSTRE is your complete path to $LUSTRE in Finisterrae III and DESTINATION is the complete path to the local directory destination. So to run the script 15 with RStudio, we can copy/paste its content directly from this repo or copy the file using scp:
+Where user is your USER in Finisterrae III, LUSTRE is your complete path to the LUSTRE directory in Finisterrae III and DESTINATION is the complete path to the local directory destination. So to run the script 15 with RStudio, we can copy/paste its content directly from this repo or copy the file using scp:
 
 ```bash
 scp -r USER@ft3.cesga.es:HOMEViromics_Vigo/scripts/15_R_script.R DESTINATION
 ```
-In this case HOME is the complete path to our $HOME in Finisterrae III. 
+In this case HOME is the complete path to your HOME in Finisterrae III. 
 
 The first lines of script 15 deal with the installation and load of the required packages to perform the data analysis. Specifically these packages are tidyverse (https://www.tidyverse.org/), vegan (https://cran.r-project.org/web/packages/vegan/), directlabels (https://cran.r-project.org/web/packages/directlabels), ggforce (https://cran.r-project.org/web/packages/ggforce) and VennDiagram (https://cran.r-project.org/web/packages/VennDiagram).

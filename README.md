@@ -37,7 +37,7 @@ ls -lh $LUSTRE/sergio/AJaponicus
 ls -lh $LUSTRE/sergio/reads
 ```
 
-AJaponicus directory must contains the genome of our sea cucumber (A_Japonicus_genome.fna.gz) and reads must contains the reads of the metagenomes (A_Japonicus_female/male_1/2.fastq.gz). For security reasons we will change the name of $LUSTRE/sergio and will move these directories just in case something fails during this practical session. The remaining subdirectories within $LUSTRE/sergio contain the results of running all the scripts.
+AJaponicus directory must contains the genome of our sea cucumber (A_Japonicus_genome.fna.gz) and reads must contains the reads of the metagenomes (A_Japonicus_female/male_1/2.fastq.gz). For security reasons we will change the name of $LUSTRE/sergio and will move these directories just in case something fails during this practical session. The remaining subdirectories within $LUSTRE/sergio contain the results of the execution of all scripts.
 
 ```bash
 mv $LUSTRE/sergio $LUSTRE/sergio2
@@ -67,6 +67,7 @@ chmod +x *.sh
 To run each script we will do:
 
 ```bash
+compute -c 36 --mem 100G
 ./script_name.sh
 ```
 
@@ -126,7 +127,7 @@ module purge
 
 The fasta file totalBinnedContigs.fa.gz will contain our definitive set of viral sequencies detected in this study. Using it as input we will run the scripts 10 to 14 to respectively quantify the abundance of the contigs in the samples, check for the completeness and contamination, annotate the proteins getting insights in the functionality, try to find the taxonomy of the contigs and also the possible hosts.
 
-At this point we have got all the information needed to perform the final data analysis in RStudio using script 15. Before this, we will collect all tables in a directory in orther to simplify the paths:
+At this point we have all the information needed to perform the final data analysis in RStudio using script 15. Before this, we will collect all tables in a directory in orther to simplify the paths:
 
 ```bash
 mkdir $LUSTRE/sergio/finalTables
@@ -137,4 +138,18 @@ cp $LUSTRE/sergio/DRAMResults/annotations.tsv $LUSTRE/sergio/finalTables
 cp $LUSTRE/sergio/geNomadResults/totalBinnedContigs_summary/*_summary.tsv $LUSTRE/sergio/finalTables
 cp $LUSTRE/sergio/iphopResults/*_m80.csv $LUSTRE/sergio/finalTables
 ```
-The first lines of script 15 deal with the instalation and load of the requaired packages to perform the data analysis. Specifically these packages are tidyverse (https://www.tidyverse.org/), vegan (https://cran.r-project.org/web/packages/vegan/), directlabels (https://cran.r-project.org/web/packages/directlabels), ggforce (https://cran.r-project.org/web/packages/ggforce) and VennDiagram (https://cran.r-project.org/web/packages/VennDiagram).
+
+We also need the finalTables directory in the machine we are going to perform the data analysis, so in a terminal in our laptop we can execute:
+
+```bash
+scp -r USER@ft3.cesga.es:LUSTRE/sergio/finalTables DESTINATION
+```
+
+Where user is your USER in Finisterrae III, LUSTRE is you complete path to $LUSTRE in Finisterrae III and DESTINATION is the complete path to the local directory destination. So to run the script 15 with RStudio, we can copy/paste its content directly from this repo or also copy the file using scp:
+
+```bash
+scp -r USER@ft3.cesga.es:HOMEViromics_Vigo/scripts/15_R_script.R DESTINATION
+```
+In this case HOME is the complete path to our $HOME in Finisterrae III. 
+
+The first lines of script 15 deal with the installation and load of the required packages to perform the data analysis. Specifically these packages are tidyverse (https://www.tidyverse.org/), vegan (https://cran.r-project.org/web/packages/vegan/), directlabels (https://cran.r-project.org/web/packages/directlabels), ggforce (https://cran.r-project.org/web/packages/ggforce) and VennDiagram (https://cran.r-project.org/web/packages/VennDiagram).

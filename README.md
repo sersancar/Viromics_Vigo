@@ -137,3 +137,4 @@ cp $LUSTRE/sergio/DRAMResults/annotations.tsv $LUSTRE/sergio/finalTables
 cp $LUSTRE/sergio/geNomadResults/totalBinnedContigs_summary/*_summary.tsv $LUSTRE/sergio/finalTables
 cp $LUSTRE/sergio/iphopResults/*_m80.csv $LUSTRE/sergio/finalTables
 ```
+The first lines of script 15 deal with the instalation and load of the requaired packages to perform the data analysis. Specifically these packages are tidyverse (https://www.tidyverse.org/), vegan (https://cran.r-project.org/web/packages/vegan/), directlabels (https://cran.r-project.org/web/packages/directlabels), ggforce (https://cran.r-project.org/web/packages/ggforce) and VennDiagram (https://cran.r-project.org/web/packages/VennDiagram).

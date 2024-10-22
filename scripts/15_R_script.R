@@ -1,7 +1,7 @@
 ################################################################################
 # List of packages to install
-packagesList <- c("tidyverse", "parallel", "vegan", "directlabels", "networkD3", 
-                                   "ggforce", "VennDiagram")
+packagesList <- c("tidyverse", "parallel", "vegan", "directlabels", 
+                  "ggforce", "VennDiagram")
 
 # The following libraries must be installed in Linux before the installation of the R packages:
 # libfontconfig1-dev libharfbuzz-dev libfribidi-dev

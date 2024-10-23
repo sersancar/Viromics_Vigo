@@ -108,7 +108,7 @@ seqkit grep -f total_viral_contigs.txt -i $LUSTRE/sergio/viroSeqs/total_filtered
 module purge
 ```
 
-The next steep will be try to cluster all the viral contigs in groups. Each bin (cluster) will contain contigs taxonomically related that will be our Operational Taxonomic Units (OTUs). We will perform this task executing the script 9. This script run the program and produce bins with at least 2 members and 2Kbp of contig length. We will use also the composite dereplication method. This dereplication method will produce a new merged contig with those contigs that overlap. 
+The next steep will be try to cluster all the viral contigs in groups. Each bin (cluster) will contain contigs taxonomically related that will be our Operational Taxonomic Units (OTUs). We will perform this task executing the script 9. This script run the program and produce bins with at least 2 members and 2 Kbp of contig length. We will use also the composite dereplication method. This dereplication method will produce a new merged contig with those contigs that overlap. 
 
 To follow the analysis we will keep the binned conting and also the non binned ones (singletons) using the shell:
 
@@ -125,7 +125,7 @@ cat $LUSTRE/sergio/viroSeqs/nonBinnedContigs.fa $LUSTRE/sergio/viroSeqs/binnedCo
 module purge
 ```
 
-The fasta file totalBinnedContigs.fa.gz will contain our definitive set of viral sequencies detected in this study. Using it as input we will run the scripts 10 to 14 to respectively quantify the abundance of the contigs in the samples, check for the completeness and contamination, annotate the proteins getting insights in the functionality, try to find the taxonomy of the contigs and also the possible hosts.
+The fasta file totalBinnedContigs.fa will contain our definitive set of viral sequencies detected in this study. Using it as input we will run the scripts 10 to 14 to respectively quantify the abundance of the contigs in the samples, check for the completeness and contamination, annotate the proteins getting insights in the functionality, try to find the taxonomy of the contigs and also the possible hosts.
 
 At this point we have all the information needed to perform the final data analysis in RStudio using script 15. Before this, we will collect all tables in a directory in orther to simplify the paths:
 

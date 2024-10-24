@@ -27,6 +27,6 @@ else
     exit 1
 fi
 
-# Run => while read sample;do sbatch doMegahit.sh ${sample};done < samples.txt
+# Run => while read sample;do ./doMegahit.sh ${sample};done < samples.txt
 # Help => module spider megahit/1.2.9-python-3.9.9
 

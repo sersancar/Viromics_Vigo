@@ -32,4 +32,4 @@ fi
 conda deactivate
 
 # RUN => ./doDRAMV.sh
-HELP => DRAM-v.py -h
+# HELP => DRAM-v.py -h

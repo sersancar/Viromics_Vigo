@@ -25,5 +25,5 @@ else
     exit 1
 fi
 
+# RUN => ./doCheckV.sh 
 # Help module spider checkv/1.0.1
-# ./doCheckV.sh

@@ -2,9 +2,6 @@
 # List of packages to install
 packagesList <- c("tidyverse", "vegan", "directlabels", "ggforce", "VennDiagram")
 
-# The following libraries must be installed in Linux before the installation of the R packages:
-# libfontconfig1-dev libharfbuzz-dev libfribidi-dev
-
 # Check if packages are installed and install them in case they aren't and load them
 for (pkg in packagesList) {
   if (!require(pkg, character.only = TRUE)) {
@@ -91,7 +88,7 @@ annotateTable <- function(DF, type){
     defTax <- annotateBin(resDF = resDF)
     df <- data.frame(defTax)
     return(df)
-  }, mc.cores = no_cores)
+  })
   
   # Combine the results
   defDF <- do.call(rbind, defDF)
@@ -273,7 +270,7 @@ bins_male_sankey <- bins %>%
   mutate(Sex = "Male")
 
 # Get the final DF
-data <- rbind(female, male)
+data <- rbind(bins_female_sankey, bins_male_sankey)
 
 data <- gather_set_data(data, c(1, 2))
 
@@ -382,7 +379,6 @@ ggplot(KOs_sankey, aes(x, id = id, split = y, value = RPKM)) +
         # legend.key.width = unit(1, 'cm'),
         text = element_text(face = "bold", size = 10), 
         # legend.text = element_text(face = "bold", size = 14),
-        # legend.title =  element_text(face = "bold", size = 16), 
         axis.text.x = element_text(angle = 0, hjust = 0.5, size = 40, face = "bold")) 
 dev.off()
 

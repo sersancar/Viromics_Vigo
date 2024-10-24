@@ -26,4 +26,4 @@ else
 fi
 
 # RUN => ./doCheckV.sh 
-# Help module spider checkv/1.0.1
+# Help => module spider checkv/1.0.1

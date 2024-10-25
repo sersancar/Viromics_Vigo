@@ -42,14 +42,14 @@ AJaponicus directory must contains the genome of our sea cucumber (A_Japonicus_g
 ```bash
 mv $LUSTRE/sergio $LUSTRE/sergio2
 mkdir $LUSTRE/sergio
-mv $LUSTRE/sergio2/AJaponicus $LUSTRE/sergio
-mv $LUSTRE/sergio2/reads $LUSTRE/sergio
+cp $LUSTRE/sergio2/AJaponicus $LUSTRE/sergio
+cp $LUSTRE/sergio2/reads $LUSTRE/sergio
 ```
 
 In our home directory in Finisterrae III we will clone this repository:
 
 ```bash
-cd $HOME
+cd
 git clone https://github.com/sersancar/Viromics_Vigo.git
 ```
 After this, we will go to the directory where all scripts needed in this session are stored:
@@ -91,17 +91,17 @@ cat $LUSTRE/sergio/viroSeqs/*_filtered_*.fa > $LUSTRE/sergio/viroSeqs/total_filt
 module purge
 ```
 
-Now we now can continue running scripts 6 to 8 which perform the search for viral sequences within the total_filtered_contigs.fa fasta file. Once we are here, we need to put together all the contigs identified as viral. To achive this, we will firstly gather all viral contig identifiers obtained with each virus discovery tool:
+Now we now can continue running scripts 6 to 8 which perform the search for viral sequences within the total_filtered_contigs.fa fasta file. Once we are here, we need to put together all the contigs identified as viral, deleting the repeted ones. To achive this, we will firstly gather all viral contig identifiers obtained with each virus discovery tool:
 
 ```bash
 module load seqkit/2.1.0
-grep "||full" $LUSTRE/sergio/VS2VirResults/final-viral-score.tsv | cut -d'|' -f1 > VS2Virs.txt
-awk '$3>=0.99 && $4<=0.01{print $1}' $LUSTRE/sergio/DVFVirResults/total_filtered_contigs.fa.gz_gt1bp_dvfpred.txt > DVFVirs.txt
+grep "||full" $LUSTRE/sergio/VS2Results/final-viral-score.tsv | cut -d'|' -f1 > VS2Virs.txt
+awk '$3>=0.99 && $4<=0.01{print $1}' $LUSTRE/sergio/DVFResults/total_filtered_contigs.fa.gz_gt1bp_dvfpred.txt > DVFVirs.txt
 seqkit seq -n -i $LUSTRE/sergio/VIBRANTResults/VIBRANT_total_filtered_contigs/VIBRANT_phages_total_filtered_contigs/total_filtered_contigs.phages_combined.fna > VIBRANTVirs.txt
-cat *Virs.txt > total_viral_contigs.txt
+cat *Virs.txt | sort -u > total_viral_contigs.txt
 ```
 
-Now we can create a fasta file containing all our viral contigs using the text file with the viral identifiers and the fasta file with all contigs:
+Now we can create a fasta file containing all our unique viral contigs using the text file with the viral identifiers and the fasta file with all viral contigs contigs:
 
 ```bash
 seqkit grep -f total_viral_contigs.txt -i $LUSTRE/sergio/viroSeqs/total_filtered_contigs.fa -o $LUSTRE/sergio/viroSeqs/total_viral_contigs.fa
@@ -115,7 +115,7 @@ To follow the analysis we will keep the binned conting and also the non binned o
 ```bash
 module load seqkit/2.1.0
 seqkit seq -n $LUSTRE/sergio/vRhymeResults/vRhyme_best_bins_fasta/*.fasta | awk -F'__' '{print $2}' | sort > binnedContigs.txt
-cat $LUSTRE/sergio/vRhymeResults/vRhyme_dereplication/vRhyme_derep_composited-list_totalVirs.txt | sort > composited.txt
+cat $LUSTRE/sergio/vRhymeResults/vRhyme_dereplication/vRhyme_derep_composited-list_total_viral_contigs.txt | sort > composited.txt
 grep -v "composite" binnedContigs.txt > binnedContigs2.txt
 cat composited.txt binnedContigs2.txt > binnedContigs3.txt
 comm -23 totalContigs.txt binnedContigs3.txt > nonBinnedContigs.txt
@@ -151,5 +151,7 @@ Where user is your USER in Finisterrae III, LUSTRE is your complete path to the 
 scp -r USER@ft3.cesga.es:HOMEViromics_Vigo/scripts/15_R_script.R DESTINATION
 ```
 In this case HOME is the complete path to your HOME in Finisterrae III. 
+
+We can aldo do all this tasks using Filezilla or sftp. As you prefer!
 
 The first lines of script 15 deal with the installation and load of the required packages to perform the data analysis. Specifically these packages are tidyverse (https://www.tidyverse.org/), vegan (https://cran.r-project.org/web/packages/vegan/), directlabels (https://cran.r-project.org/web/packages/directlabels), ggforce (https://cran.r-project.org/web/packages/ggforce) and VennDiagram (https://cran.r-project.org/web/packages/VennDiagram).
